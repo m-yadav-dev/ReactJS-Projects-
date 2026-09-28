@@ -1,18 +1,13 @@
-import "./index.css";
-
-const TabItem = (props) => {
-  const { tabsListItem, onChangeNavigateTabItem, isTabItemClicked } = props;
-  const { tabId, displayText } = tabsListItem;
-
-  const activeTabClass = isTabItemClicked ? "active-tab" : null;
-
-  const onClickTabItem = () => {
-    onChangeNavigateTabItem(tabId);
-  };
-
+import './index.css'
+const TabItem = ({ tabDetails, updateActiveTab, isActive }) => {
+  const { displayText } = tabDetails;
   return (
-    <li onClick={onClickTabItem}>
-      <button className={`tab-item-btn tab-item ${activeTabClass}`}>
+    <li className="app-store-tab-item">
+      <button
+        type="button"
+        className={`app-store-tab-button ${isActive ? "active" : ""}`}
+        onClick={() => updateActiveTab(tabDetails.tabId)}
+      >
         {displayText}
       </button>
     </li>

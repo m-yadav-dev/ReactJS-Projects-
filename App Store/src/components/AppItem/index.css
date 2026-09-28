@@ -1,43 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "inter", sans-serif;
+.app-item {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
+.app-item:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
 
-.app-store-card-item {
-  width: 100%;
-  max-width: 160px;
-  background-color: #ffffff;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease-in-out;
 }
 
-
-.app-store-card-item:hover {
-  transform: scale(1.1);
+.app-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-title  {
-  font-size: clamp(1rem, 1vw, 1.5rem);
-  font-weight: 550;
-  margin: 8px;
+.app-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
+.app-name {
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+}
 
-
-.logo-img  {
-  height: 60px;
-  width: 60px;
+.app-category {
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: #666;
+    margin: 0;
+    padding: 0;
 }

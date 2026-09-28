@@ -1,12 +1,11 @@
 import "./index.css";
-const AppItem = (props) => {
-  const { eachAppStoreData } = props;
-  const { appId, appName, imageUrl } = eachAppStoreData;
 
+const AppItem = ({ app }) => {
+  const { appName, imageUrl} = app;
   return (
-    <li className="app-store-card-item">
-      <img src={imageUrl} alt={appName} className="logo-img" />
-      <p className="card-title">{appName}</p>
+    <li className="app-item">
+      <img src={imageUrl} className="app-image" alt={appName} />
+      <h3 className="app-name">{appName}</h3>
     </li>
   );
 };
