@@ -1,6 +1,6 @@
-import Home from "./components/Home";
+import Home from "./features/dashboard/components/Home/index.jsx";
 import { Routes, Route } from "react-router-dom";
-import TeamMatches from "./components/TeamMatches";
+import TeamMatches from "./features/dashboard/components/TeamMatches/index.jsx";
 import "./App.css";
 const App = () => {
   return (

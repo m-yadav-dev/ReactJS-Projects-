@@ -1,7 +1,7 @@
 import "./index.css";
 
 const LatestMatch = (props) => {
-  const { latestMatchDetails } = props;
+  const { latestMatchDetails = {} } = props;
   const {
     competingTeam,
     competingTeamLogo,
@@ -12,7 +12,8 @@ const LatestMatch = (props) => {
     secondInnings,
     umpires,
     venue,
-  } = latestMatchDetails;
+  } = latestMatchDetails || {};
+  console.log("LatestMatch Props:", props);
   return (
     <div className="latest-match-container">
       <div className="latest-match-card">
