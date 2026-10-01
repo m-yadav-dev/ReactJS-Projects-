@@ -143,7 +143,7 @@ const BrowserHistory = () => {
                     <img
                       className="logo-img"
                       src={eachItem.logoUrl}
-                      alt={eachItem.title}
+                      alt="domain logo"
                     />
                     <h1 className="title">
                       {eachItem.title}{" "}
@@ -153,6 +153,7 @@ const BrowserHistory = () => {
                   <div className="history-delete-icon-container">
                     <button
                       className="list-delete-btn"
+                      data-testid="delete"
                       onClick={() => onClickDeleteListItem(eachItem.id)}
                     >
                       <img

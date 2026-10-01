@@ -1,4 +1,4 @@
-import "./index.css";
+import './index.css'
 
 const About = () => (
   <div className="about-container">
@@ -12,6 +12,6 @@ const About = () => (
       I love to create! I am a front-end web developer
     </p>
   </div>
-);
+)
 
-export default About;
+export default About

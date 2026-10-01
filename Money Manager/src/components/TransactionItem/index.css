@@ -1,0 +1,27 @@
+.transaction-item {
+  border-bottom: 1px solid #d7dae6;
+}
+
+.transaction-cell {
+  padding: 15px 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #475569;
+  transition: transform 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  transform: scale(1.1);
+}
+.delete-img {
+  width: 20px;
+  height: 20px;
+}
+
+

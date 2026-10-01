@@ -1,4 +1,4 @@
-import "./index.css";
+import './index.css'
 
 const Contact = () => (
   <div className="contact-container">
@@ -9,6 +9,6 @@ const Contact = () => (
     />
     <h1 className="contact-heading">Contact</h1>
   </div>
-);
+)
 
-export default Contact;
+export default Contact

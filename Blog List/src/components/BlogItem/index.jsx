@@ -2,7 +2,7 @@ import './index.css'
 
 const BlogItem = (props) => {
   const { eachBlogItem } = props;
-  const { id, title, description, publishedDate } = eachBlogItem;
+  const { title, description, publishedDate } = eachBlogItem;
 
 
   return (

@@ -1,32 +1,27 @@
-import axios from "axios";
 import { Component } from "react";
 import { TailSpin } from "react-loader-spinner";
 import BlogItem from "../BlogItem";
+import "./index.css";
 
 class BlogList extends Component {
-  state = {
-    blogsData: [],
-    isLoading: true,
-  };
+  state = { isLoading: true, blogsData: [] };
 
   componentDidMount() {
-    this.getBlogData();
+    this.getBlogsData();
   }
 
-  getBlogData = async () => {
+  getBlogsData = async () => {
     try {
-      const responseData = await axios.get("https://apis.ccbp.in/blogs");
-      const blogData = responseData.data;
-
-      const formattedData = blogData.map((eachBlogItem) => ({
-        id: eachBlogItem.id,
-        title: eachBlogItem.title,
-        imageUrl: eachBlogItem.image_url,
-        avatarUrl: eachBlogItem.avatar_url,
-        author: eachBlogItem.author,
-        topic: eachBlogItem.topic,
+      const response = await fetch("https://apis.ccbp.in/blogs");
+      const data = await response.json();
+      const formattedData = data.map((eachItem) => ({
+        id: eachItem.id,
+        title: eachItem.title,
+        imageUrl: eachItem.image_url,
+        avatarUrl: eachItem.avatar_url,
+        author: eachItem.author,
+        topic: eachItem.topic,
       }));
-
       this.setState({ blogsData: formattedData, isLoading: false });
     } catch (error) {
       console.log(error.message);
@@ -35,28 +30,20 @@ class BlogList extends Component {
 
   render() {
     const { blogsData, isLoading } = this.state;
+
     return (
-      <div className="blog-list-container">
-        <ul>
-          {isLoading ? (
-            <div data-testid="loader">
-              <TailSpin
-                height="80"
-                width="80"
-                color="#000000"
-                ariaLabel="tail-spin-loading"
-                radius="1"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              />
-            </div>
-          ) : (
-            blogsData.map((eachBlogItem) => (
-              <BlogItem key={eachBlogItem.id} blogDetails={eachBlogItem} />
-            ))
-          )}
-        </ul>
+      <div className="blogs-list-container">
+        {isLoading ? (
+          <div data-testid="loader">
+            <TailSpin type="TailSpin" color="#00bfff" height={50} width={50} />
+          </div>
+        ) : (
+          <ul className="blogs-list">
+            {blogsData.map((eachBlogItem) => (
+              <BlogItem key={eachBlogItem.id} blogItemDetails={eachBlogItem} />
+            ))}
+          </ul>
+        )}
       </div>
     );
   }

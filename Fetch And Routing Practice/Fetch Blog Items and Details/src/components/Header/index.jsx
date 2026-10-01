@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 import "./index.css";
@@ -14,21 +13,15 @@ const Header = () => (
       <h1 className="title">Wave</h1>
     </div>
     <ul className="nav-items-list">
-      <li className="link-item">
-        <NavLink className="route-link" to="/">
-          Home
-        </NavLink>
-      </li>
-      <li className="link-item">
-        <NavLink className="route-link" to="/about">
-          About
-        </NavLink>
-      </li>
-      <li className="link-item">
-        <NavLink className="route-link" to="/contact">
-          Contact
-        </NavLink>
-      </li>
+      <NavLink className="route-link" to="/">
+        <li className="link-item">Home</li>
+      </NavLink>
+      <NavLink className="route-link" to="/about">
+        <li className="link-item">About</li>
+      </NavLink>
+      <NavLink className="route-link" to="/contact">
+        <li>Contact</li>
+      </NavLink>
     </ul>
   </nav>
 );

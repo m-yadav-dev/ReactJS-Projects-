@@ -1,12 +1,11 @@
-
-import UserInfo from "../UserInfo";
 import BlogList from "../BlogList";
-import "./index.css";
 
+import "./index.css";
+import UserInfo from "../UserInfo";
 const Home = () => (
   <div className="home-container">
-    <UserInfo/>
-    <BlogList/>
+    <UserInfo />
+    <BlogList />
   </div>
 );
 

@@ -1,0 +1,50 @@
+.game-score-card {
+  /* height: 800px; */
+  width: 100%;
+  max-width: 600px;
+  max-height: 790px;
+  background-image: url("https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.trophy-container {
+  margin-top: 200px;
+}
+
+.trophy-image {
+  width: 380px;
+}
+
+.your-score-title {
+  font-size: clamp(1.5rem, 2.5rem, 3rem);
+  color: #ffffff;
+  margin-top: 60px;
+}
+
+.game-score {
+  font-size: clamp(2rem, 2vw, 4rem);
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.play-again-btn {
+  margin-top: 40px;
+  padding: 12px 24px;
+  background-color: #cf60c8;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

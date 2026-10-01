@@ -1,0 +1,98 @@
+.password-item {
+  border: 1px solid #b6c3ca;
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  width: calc(33% - 14px); /* 3 cards per row approx */
+  min-width: 250px;
+}
+
+.initial-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+/* Random colors for Initials */
+.amber {
+  background-color: #f59e0b;
+}
+.blue {
+  background-color: #0b69ff;
+}
+.orange {
+  background-color: #f97316;
+}
+.emerald {
+  background-color: #10b981;
+}
+.teal {
+  background-color: #14b8a6;
+}
+.red {
+  background-color: #ef4444;
+}
+.light-blue {
+  background-color: #0ea5e9;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+.website-text {
+  color: #475569;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.username-text {
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.password-text {
+  color: #1e293b;
+  font-size: 16px;
+  margin: 0;
+}
+
+.stars-image {
+  width: 100px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-icon {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
+}
+
+.password-value  {
+  font-size: clamp(14px, 1vw, 16px);
+  color: #1e293b;
+}

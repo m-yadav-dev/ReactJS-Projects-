@@ -1,4 +1,4 @@
-import "./index.css";
+import './index.css'
 
 const UserInfo = () => (
   <div className="user-info-container">
@@ -10,6 +10,6 @@ const UserInfo = () => (
     <h1 className="user-name">Wade Warren</h1>
     <p className="user-designation">Software developer at UK</p>
   </div>
-);
+)
 
-export default UserInfo;
+export default UserInfo

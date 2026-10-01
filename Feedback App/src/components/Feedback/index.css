@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "inter", sans-serif;
+}
+
+.bg {
+  background-image: linear-gradient(to right, #ffeeee, #ffc0bb);
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 80px 120px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 4px 3px 5px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-text {
+  font-size: clamp(1rem, 1.1rem, 2rem);
+  font-weight: 550;
+  line-height: 1.2;
+}
+
+.emoji-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 30px;
+  list-style: none;
+}
+
+.emoji-image {
+  height: 48px;
+  width: 48px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+}
+
+.emoji-image:hover {
+  transform: scale(1.1);
+}
+
+.emoji {
+  display: flex;
+  flex-direction: column;
+}
+
+.emoji p {
+  font-size: clamp(1rem, 1.1rem, 2rem);
+  margin-top: 10px;
+  font-weight: 450;
+}
+
+
+
+.thank-you-container  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.heart-img  {
+  height: 60px;
+  width: 60px;
+}
+
+.thank-you-title  {
+  font-size: clamp(1.5rem, 1.3rem, 2.5rem);
+  font-weight: 550;
+  margin: 10px 0px 10px 0px;
+}
+
+.thank-you-text  {
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 400;
+}

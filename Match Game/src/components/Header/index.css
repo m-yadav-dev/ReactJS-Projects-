@@ -1,0 +1,44 @@
+.navbar-header {
+  height: 110px;
+  width: 100%;
+  background-color: #2c0e3a;
+}
+
+.nav-items {
+  padding: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.website-logo {
+  height: 60px;
+  width: 240px;
+}
+
+.score-timer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.score {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #ffffff;
+}
+
+.timer-logo {
+  height: 30px;
+  width: 30px;
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-value {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #fec653;
+  font-weight: 500;
+}

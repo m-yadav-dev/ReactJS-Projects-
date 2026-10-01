@@ -1,0 +1,12 @@
+
+
+
+.list-images  {
+    width: 100%;
+    height: max-content;
+}
+
+.image-list-btn {
+    background-color: transparent;
+    border: none;
+}

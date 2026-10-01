@@ -1,21 +1,21 @@
 import { NavLink } from "react-router-dom";
-import './index.css'
+import "./index.css";
+
 const BlogItem = (props) => {
-  const { blogDetails } = props;
-  const { id, title, imageUrl, avatarUrl, author, topic } = blogDetails;
-    
+  const { blogItemDetails } = props;
+  const { id, imageUrl, topic, title, avatarUrl, author } = blogItemDetails;
   return (
-    <NavLink to={`/blogs/${id}`} className="blog-navlink">
-      <li className="blog-list-container">
-        <div className="blog-img-container">
-          <img className="blog-post-img" src={imageUrl} alt={`item${id}`} />
-        </div>
-        <div className="blog-description-container">
-          <p className="blog-topic">{topic}</p>
-          <p className="list-blog-title">{title}</p>
-          <div className="author-container">
-            <img className="avatar-img" src={avatarUrl} alt={`author${id}`} />
-            <p className="author-name">{author}</p>
+    <NavLink to={`/blogs/${id}`} className="blog-item-link">
+      <li className="blog-item">
+        <div className="blog-item-container">
+          <img className="blog-item-image" src={imageUrl} alt={`item${id}`} />
+          <div className="blog-item-info">
+            <p className="blog-item-topic">{topic}</p>
+            <h1 className="blog-item-title">{title}</h1>
+            <div className="author-info">
+              <img className="avatar" src={avatarUrl} alt={`avatar${id}`} />
+              <p className="author-name">{author}</p>
+            </div>
           </div>
         </div>
       </li>
