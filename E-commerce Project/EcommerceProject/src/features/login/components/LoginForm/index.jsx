@@ -1,14 +1,15 @@
 import { useState } from "react";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import "./index.css";
+import { useLogin } from "../../hooks/useLogin";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMsg, setErrorMsg] = useState("");
-  const [showSubmitError, setShowSubmitError] = useState(false);
+
+  const { mutate, isPending, isError, error } = useLogin();
 
   const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ const LoginForm = () => {
     setPassword(event.target.value);
   };
 
+  console.log("Login Component Mounted");
   const renderPasswordField = () => (
     <>
       <label className="input-label" htmlFor="password">
@@ -51,37 +53,19 @@ const LoginForm = () => {
       />
     </>
   );
-  const onSubmitSuccess = (jwtToken) => {
-    navigate("/", { replace: true });
-    Cookies.set("jwt_token", jwtToken, { expires: 30 });
-  };
 
-  const onSubmitFailure = (errorMsg) => {
-    console.log(errorMsg);
-    setShowSubmitError(true);
-    setErrorMsg(errorMsg);
-  };
-
-  const submitForm = async (event) => {
+  const submitForm = (event) => {
     event.preventDefault();
     const userDetails = { username, password };
-    const url = "https://apis.ccbp.in/login";
-    const options = {
-      method: "POST",
-      body: JSON.stringify(userDetails),
-    };
-    const response = await fetch(url, options);
-    const data = await response.json();
-    console.log(data);
-    if (response.ok === true) {
-      onSubmitSuccess(data.jwt_token);
-    } else {
-      onSubmitFailure(data.error_msg);
-    }
+
+    mutate(userDetails, {
+      onSuccess: (data) => {
+        Cookies.set("jwt_token", data.jwt_token, { expires: 30 });
+        navigate("/", { replace: true });
+      },
+    });
+    
   };
-
-
-
   return (
     <div className="login-form-container">
       <img
@@ -102,13 +86,12 @@ const LoginForm = () => {
         />
         <div className="input-container">{renderUsernameField()}</div>
         <div className="input-container">{renderPasswordField()}</div>
-        <button type="submit" className="login-button">
-          Login
+        <button type="submit" className="login-button" disabled={isPending}>
+          {isPending ? "Logging in..." : "Login"}
         </button>
-        {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+        {isError && <p className="error-message">*{error.message}</p>}
       </form>
     </div>
   );
 };
-
 export default LoginForm;

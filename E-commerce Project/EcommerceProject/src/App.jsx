@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./features/login/components/LoginForm";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
@@ -10,7 +10,6 @@ import "./App.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => (
-  <BrowserRouter>
     <Routes>
       <Route path="/login" element={<LoginForm />} />
       <Route
@@ -39,7 +38,6 @@ const App = () => (
       />
       <Route path="*" element={<NotFound />} />
     </Routes>
-  </BrowserRouter>
 );
 
 export default App;
